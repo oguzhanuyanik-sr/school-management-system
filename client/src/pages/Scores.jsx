@@ -20,7 +20,7 @@ function Scores() {
 
   const getSpecificUser = async (id) => {
     const res = await axios.get(
-      `https://school-system-app.vercel.app/list/${id}`
+      `https://school-system-api1.vercel.app/list/${id}`
     );
 
     if (res.status === 200) {

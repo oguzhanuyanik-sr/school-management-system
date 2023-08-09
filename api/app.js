@@ -8,8 +8,8 @@ const Students = require('./models/Students');
 const app = express();
 app.use(
   cors({
-    origin: ['https://school-system-app.vercel.app'],
-    methods: ['POST', 'GET', 'PATCH', 'DELETE'],
+    origin: ['https://school-system-client1.vercel.app'],
+    methods: ['POST', 'GET'],
     credentials: true,
   })
 );
@@ -81,7 +81,7 @@ app.patch('/update/:studentId', async (req, res) => {
   }
 });
 
-// SDelete User
+// Delete User
 app.delete('/delete/:studentId', async (req, res) => {
   try {
     const removedStudent = await Students.deleteOne({
