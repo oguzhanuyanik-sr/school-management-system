@@ -16,6 +16,11 @@ app.use(
 app.use(bodyParser.json());
 
 // Get All Users
+app.get('/', async (req, res) => {
+  res.json('test');
+});
+
+// Get All Users
 app.get('/list', async (req, res) => {
   try {
     const students = await Students.find();
