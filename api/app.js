@@ -8,7 +8,7 @@ const Students = require('./models/Students');
 const app = express();
 app.use(
   cors({
-    origin: ['https://school-system-app.vercel.app/'],
+    origin: ['https://school-system-app.vercel.app'],
     methods: ['POST', 'GET', 'PATCH', 'DELETE'],
     credentials: true,
   })
