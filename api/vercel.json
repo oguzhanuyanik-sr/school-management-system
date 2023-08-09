@@ -3,6 +3,26 @@
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "routes": [
     {
+      "src": "/list",
+      "dest": "/list"
+    },
+    {
+      "src": "/list/:studentId",
+      "dest": "/list/:studentId"
+    },
+    {
+      "src": "/add",
+      "dest": "/add"
+    },
+    {
+      "src": "/update/:studentId",
+      "dest": "/update/:studentId"
+    },
+    {
+      "src": "/delete/:studentId",
+      "dest": "/delete/:studentId"
+    },
+    {
       "src": "/(.*)",
       "dest": "/"
     }
