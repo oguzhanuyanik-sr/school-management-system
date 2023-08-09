@@ -35,7 +35,9 @@ function StudentList() {
 
   // Get All Users
   const getUsers = async () => {
-    const res = await axios.get('https://school-system-api1.vercel.app/list');
+    const res = await axios.get(
+      'https://school-system-api1.vercel.app/list/all'
+    );
 
     if (res.status === 200) {
       setResponseData(res.data);

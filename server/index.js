@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.json('Hello');
 });
 
-app.get('/list', async (req, res) => {
+app.get('/list/all', async (req, res) => {
   try {
     const students = await Students.find();
     res.json(students);
