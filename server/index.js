@@ -8,10 +8,17 @@ const app = express();
 app.use(
   cors({
     origin: 'https://school-system-client1.vercel.app',
-    methods: ['POST', 'GET'],
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     credentials: true,
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'Access-Control-Allow-Origin',
+    ],
   })
 );
+
+app.options('*', cors());
 app.use(express.json());
 
 mongoose.connect(
