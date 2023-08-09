@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Students = mongoose.Schema({
+const Students = new mongoose.Schema({
   student_no: {
     type: Number,
     required: true,
