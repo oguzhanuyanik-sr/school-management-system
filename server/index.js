@@ -4,9 +4,10 @@ const cors = require('cors');
 const Students = require('./models/Students');
 
 const app = express();
+
 app.use(
   cors({
-    origin: ['https://school-system-client1.vercel.app'],
+    origin: 'https://school-system-client1.vercel.app',
     methods: ['POST', 'GET'],
     credentials: true,
   })
@@ -21,7 +22,6 @@ app.get('/', (req, res) => {
   res.json('Hello');
 });
 
-// Get All Users
 app.get('/list', async (req, res) => {
   try {
     const students = await Students.find();
@@ -31,7 +31,6 @@ app.get('/list', async (req, res) => {
   }
 });
 
-// Get Specific User
 app.get('/list/:studentId', async (req, res) => {
   try {
     const student = await Students.findById(req.params.studentId);
@@ -41,7 +40,6 @@ app.get('/list/:studentId', async (req, res) => {
   }
 });
 
-// Add User
 app.post('/add', async (req, res) => {
   const student = new Students({
     student_no: req.body.student_no,
@@ -57,7 +55,6 @@ app.post('/add', async (req, res) => {
   }
 });
 
-// Update User
 app.patch('/update/:studentId', async (req, res) => {
   try {
     const updatedStudent = await Students.updateOne(
@@ -82,7 +79,6 @@ app.patch('/update/:studentId', async (req, res) => {
   }
 });
 
-// Delete User
 app.delete('/delete/:studentId', async (req, res) => {
   try {
     const removedStudent = await Students.deleteOne({
@@ -94,6 +90,7 @@ app.delete('/delete/:studentId', async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log('Server is Running');
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
