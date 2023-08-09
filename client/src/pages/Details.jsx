@@ -21,7 +21,7 @@ function Details() {
 
   const getSpecificUser = async (id) => {
     const res = await axios.get(
-      `https://react-school-system.vercel.app/list/${id}`
+      `https://school-system-app.vercel.app/list/${id}`
     );
 
     if (res.status === 200) {
