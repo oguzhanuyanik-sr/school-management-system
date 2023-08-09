@@ -6,7 +6,13 @@ const express = require('express');
 const Students = require('./models/Students');
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://school-system-app.vercel.app/'],
+    methods: ['POST', 'GET', 'PATCH', 'DELETE'],
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 // Get All Users
@@ -87,4 +93,4 @@ mongoose.connect(process.env.DB_CONNECTION, () =>
   console.log('Connected to DB!')
 );
 
-app.listen(4000);
+app.listen(3001);
