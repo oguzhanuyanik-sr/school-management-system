@@ -35,7 +35,7 @@ function StudentList() {
 
   // Get All Users
   const getUsers = async () => {
-    const res = await axios.get('http://localhost:4000/list');
+    const res = await axios.get('https://react-school-system.vercel.app/list');
 
     if (res.status === 200) {
       setResponseData(res.data);
@@ -44,7 +44,9 @@ function StudentList() {
 
   // Get Specific User
   const getSpecificUser = async (id) => {
-    const res = await axios.get(`http://localhost:4000/list/${id}`);
+    const res = await axios.get(
+      `https://react-school-system.vercel.app/list/${id}`
+    );
 
     if (res.status === 200) {
       setUpdateData({
@@ -71,7 +73,7 @@ function StudentList() {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:4000/add',
+      url: 'https://react-school-system.vercel.app/add',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -105,7 +107,7 @@ function StudentList() {
 
     var config = {
       method: 'patch',
-      url: `http://localhost:4000/update/${updateId}`,
+      url: `https://react-school-system.vercel.app/update/${updateId}`,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -127,7 +129,7 @@ function StudentList() {
   const deleteUser = async (id) => {
     var config = {
       method: 'delete',
-      url: `http://localhost:4000/delete/${id}`,
+      url: `https://react-school-system.vercel.app/delete/${id}`,
       headers: {
         'Content-Type': 'application/json',
       },

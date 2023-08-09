@@ -19,7 +19,9 @@ function Scores() {
   }, [id]);
 
   const getSpecificUser = async (id) => {
-    const res = await axios.get(`http://localhost:4000/list/${id}`);
+    const res = await axios.get(
+      `https://react-school-system.vercel.app/list/${id}`
+    );
 
     if (res.status === 200) {
       setResult(res.data);
