@@ -89,8 +89,9 @@ app.delete('/delete/:studentId', async (req, res) => {
 });
 
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.DB_CONNECTION, () =>
-  console.log('Connected to DB!')
+mongoose.connect(
+  'mongodb+srv://mubco:nEaMIDZ2dU0IHPap@myproject.wpdzp1v.mongodb.net/school_system?retryWrites=true&w=majority',
+  () => console.log('Connected to DB!')
 );
 
 app.listen(3001);
