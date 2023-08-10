@@ -1,4 +1,4 @@
-# React School System
+# School Management System
 
 ```
 React, React Router, React Bootstrap, Express, Mongoose, Axios
